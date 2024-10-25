@@ -19,9 +19,11 @@ namespace SalinasPrueba.Controllers
 
 
         [HttpGet("{NumeroFactura}")]
-        public async Task<ActionResult<IEnumerable<Factura>>> getFacturaNum(int id)
+        public async Task<ActionResult<Factura>> GetFacturaNum(string NumeroFactura)
         {
-            var factura = await _context.Facturas.FindAsync(id);
+            var factura = await _context.Facturas
+                                        .Include(f => f.NumeroFactura)
+                                        .FirstOrDefaultAsync(f => f.NumeroFactura == NumeroFactura);
             if (factura == null)
             {
                 return NotFound();
@@ -29,24 +31,18 @@ namespace SalinasPrueba.Controllers
             return factura;
         }
 
-        [HttpGet("{NumeroFactura}")]
-        public async Task<ActionResult<IEnumerable<Factura>>> getFacturaNum(int id)
-        {
-            var factura = await _context.Facturas.FindAsync(id);
-            if (factura == null)
-            {
-                return NotFound();
-            }
-            return factura;
-        }
+
+
 
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<Factura>>> PostProducto(Factura factura)
+        public async Task<ActionResult<Factura>> PostFactura(Factura factura)
         {
             _context.Facturas.Add(factura);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(getFactura, producto: GetFactura()), new { id = factura.Id }, factura);
+
+            return CreatedAtAction(nameof(GetFacturaNum), new { NumeroFactura = factura.NumeroFactura }, factura);
         }
+
 
         [HttpPut]
         public async Task<ActionResult<IEnumerable<Producto>>> PutFactura(int id, Factura factura)
@@ -56,7 +52,7 @@ namespace SalinasPrueba.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(factura).State = EntityState.Modified;
+            _context.Entry(factura).State = (Microsoft.EntityFrameworkCore.EntityState)EntityState.Modified;
             await _context.SaveChangesAsync();
             return NoContent();
         }
