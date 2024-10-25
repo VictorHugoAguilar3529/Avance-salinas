@@ -1,0 +1,7 @@
+C:\Users\aguil\source\MisDocumentos\SalinasPrueba\SalinasPrueba\obj\Debug\net6.0\SalinasPrueba.csproj.AssemblyReference.cache
+C:\Users\aguil\source\MisDocumentos\SalinasPrueba\SalinasPrueba\obj\Debug\net6.0\SalinasPrueba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aguil\source\MisDocumentos\SalinasPrueba\SalinasPrueba\obj\Debug\net6.0\SalinasPrueba.AssemblyInfoInputs.cache
+C:\Users\aguil\source\MisDocumentos\SalinasPrueba\SalinasPrueba\obj\Debug\net6.0\SalinasPrueba.AssemblyInfo.cs
+C:\Users\aguil\source\MisDocumentos\SalinasPrueba\SalinasPrueba\obj\Debug\net6.0\SalinasPrueba.csproj.CoreCompileInputs.cache
+C:\Users\aguil\source\MisDocumentos\SalinasPrueba\SalinasPrueba\obj\Debug\net6.0\SalinasPrueba.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\aguil\source\MisDocumentos\SalinasPrueba\SalinasPrueba\obj\Debug\net6.0\SalinasPrueba.MvcApplicationPartsAssemblyInfo.cache
